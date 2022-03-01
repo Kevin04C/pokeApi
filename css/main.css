@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.3rem;
+}
+
+.grid-fluida .loader {
+  display: block;
+  margin: 0 auto;
+}
