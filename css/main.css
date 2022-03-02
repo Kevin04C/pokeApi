@@ -1,10 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 body {
   font-family: sans-serif;
+  background-color: #222;
+  color: #fff;
+  overflow-x: hidden;
 }
 
 .title {
   text-align: center;
   font-size: 2.3rem;
+  margin: 1.5rem;
+  -webkit-animation: scale 0.5s ease infinite alternate;
+          animation: scale 0.5s ease infinite alternate;
 }
 
 .links {
@@ -21,6 +36,10 @@ body {
 .links a {
   text-decoration: none;
   font-size: 2rem;
+  background-color: #e95c4d;
+  padding: 0.5rem;
+  color: #fff;
+  border-radius: 10px;
 }
 
 .loader {
@@ -30,18 +49,206 @@ body {
           transform: translateX(-50%);
 }
 
+.buttonUP {
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  z-index: 1;
+  right: 25px;
+  bottom: 25px;
+  background-color: #222;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: 0.5s opacity;
+  transition: 0.5s opacity;
+}
+
+.buttonUP i {
+  color: #fff;
+  font-size: 2.8rem;
+}
+
+.buttonUP.hidden {
+  opacity: 1;
+  pointer-events: visible;
+}
+
 .grid-fluida {
+  margin: 0 auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(200px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   text-align: center;
-  position: relative;
+  margin-bottom: 2rem;
+  -webkit-animation: aparecer 1.5s ease;
+          animation: aparecer 1.5s ease;
 }
 
 .grid-fluida .pokemon {
-  background-color: #48e;
-  padding: 0.5rem;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  gap: 0.5rem;
+  position: relative;
+  -webkit-box-shadow: -1px 5px 25px 0px rgba(120, 116, 116, 0.76);
+          box-shadow: -1px 5px 25px 0px rgba(120, 116, 116, 0.76);
+}
+
+.grid-fluida .pokemon .pokemon__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+  position: relative;
+}
+
+.grid-fluida .pokemon .pokemon__body .pokemon__name {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  position: relative;
+}
+
+.grid-fluida .pokemon .body__types {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  z-index: 5;
+}
+
+.grid-fluida .pokemon .body__types .type__1,
+.grid-fluida .pokemon .body__types .type__2 {
+  margin-bottom: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  padding: 0.4rem;
   border-radius: 10px;
+  place-self: flex-start;
+  font-size: 1.05rem;
+  text-transform: capitalize;
+}
+
+.grid-fluida .pokemon img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+}
+
+.grid-fluida .pokeball {
+  position: absolute;
+  bottom: 5%;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  opacity: 0.1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.classic {
+  background-color: #ccc;
+}
+
+.bug {
+  background-color: #aedf78;
+}
+
+.water {
+  background-color: #43ccff;
+}
+
+.grass {
+  background-color: #00ca91;
+}
+
+.fire {
+  background-color: #e95c4d;
+}
+
+.normal {
+  background-color: #a5a5a5;
+}
+
+.electric {
+  background-color: #e2e269;
+}
+
+.ground {
+  background-color: #aedf78;
+}
+
+.poison {
+  background-color: #b667cf;
+}
+
+.fairy {
+  background-color: #ffc5b4;
+}
+
+.loader.active {
+  display: none;
+}
+
+@-webkit-keyframes scale {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes scale {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@-webkit-keyframes aparecer {
+  0% {
+    -webkit-transform: translateY(100%) scale(0.25);
+            transform: translateY(100%) scale(0.25);
+  }
+  50% {
+    -webkit-transform: translateY(50%) 0.75;
+            transform: translateY(50%) 0.75;
+  }
+  100% {
+    -webkit-transform: translateY(0) scale(1);
+            transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes aparecer {
+  0% {
+    -webkit-transform: translateY(100%) scale(0.25);
+            transform: translateY(100%) scale(0.25);
+  }
+  50% {
+    -webkit-transform: translateY(50%) 0.75;
+            transform: translateY(50%) 0.75;
+  }
+  100% {
+    -webkit-transform: translateY(0) scale(1);
+            transform: translateY(0) scale(1);
+  }
 }

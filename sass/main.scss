@@ -1,9 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 body {
   font-family: sans-serif;
+  background-color: #222;
+  color: #fff;
+  overflow-x: hidden;
 }
 .title {
   text-align: center;
   font-size: 2.3rem;
+  margin: 1.5rem;
+  animation: scale 0.5s ease infinite alternate;
 }
 .links {
   display: flex;
@@ -13,6 +25,10 @@ body {
   a {
     text-decoration: none;
     font-size: 2rem;
+    background-color: #e95c4d;
+    padding: 0.5rem;
+    color: #fff;
+    border-radius: 10px;
   }
 }
 .loader {
@@ -20,16 +36,137 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
+.buttonUP {
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  z-index: 1;
+  right: 25px;
+  bottom: 25px;
+  background-color: #222;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.5s opacity;
+  i {
+    color: #fff;
+    font-size: 2.8rem;
+  }
+}
+.buttonUP.hidden {
+  opacity: 1;
+  pointer-events: visible;
+}
 .grid-fluida {
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   text-align: center;
-  position: relative;
+  margin-bottom: 2rem;
+  animation: aparecer 1.5s ease;
 
   .pokemon {
-    background-color: #48e;
-    padding: 0.5rem;
-    border-radius: 10px;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+    display: flex;
+    color: #fff;
+    gap: 0.5rem;
+    position: relative;
+    box-shadow: -1px 5px 25px 0px rgba(120, 116, 116, 0.76);
+    .pokemon__body {
+      flex: 1 1 50%;
+      position: relative;
+      .pokemon__name {
+        font-size: 1.7rem;
+        margin-bottom: 0.5rem;
+        text-transform: capitalize;
+        position: relative;
+      }
+    }
+    .body__types {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 5;
+      .type__1,
+      .type__2 {
+        margin-bottom: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.3);
+        text-align: center;
+        padding: 0.4rem;
+        border-radius: 10px;
+        place-self: flex-start;
+        font-size: 1.05rem;
+        text-transform: capitalize;
+      }
+    }
+    img {
+      flex: 1 1 50%;
+    }
+  }
+  .pokeball {
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    opacity: 0.1;
+    object-fit: cover;
+  }
+}
+.classic {
+  background-color: #ccc;
+}
+.bug {
+  background-color: #aedf78;
+}
+.water {
+  background-color: #43ccff;
+}
+.grass {
+  background-color: #00ca91;
+}
+.fire {
+  background-color: #e95c4d;
+}
+.normal {
+  background-color: #a5a5a5;
+}
+.electric {
+  background-color: #e2e269;
+}
+.ground {
+  background-color: #aedf78;
+}
+.poison {
+  background-color: #b667cf;
+}
+.fairy {
+  background-color: #ffc5b4;
+}
+
+.loader.active {
+  display: none;
+}
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+@keyframes aparecer {
+  0% {
+    transform: translateY(100%) scale(0.25);
+  }
+  50% {
+    transform: translateY(50%) (0.75);
+  }
+  100% {
+    transform: translateY(0) scale(1);
   }
 }

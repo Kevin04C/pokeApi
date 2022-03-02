@@ -18,25 +18,24 @@ async function getPokemon(url) {
         let url = json.results[i].url;
         let res = await fetch(url);
         let pokemon = await res.json();
-        let types = pokemon.types.map((el) => {
-          return el.type;
-        });
-
-        console.log(types);
+        let types = pokemon.types.map((el) => el.type).map((el) => el.name);
 
         if (!res.ok) throw { status: res.status, statusText: res.statusText };
 
-        const gif =
-          pokemon["sprites"]["versions"]["generation-v"]["black-white"][
-            "animated"
-          ]["front_default"];
         const imgPokemon = pokemon.sprites.front_default;
 
         template += `
-        <div class="pokemon">
-          <img src=${imgPokemon} alt =${pokemon.name}">
-          <h2>${pokemon.name}</h2>
-        </div>`;
+        <div class="pokemon classic ${types[0]} ">
+        <div class="pokemon__body">
+          <h2 class="pokemon__name">${pokemon.name}</h2>
+          <div class="body__types">
+            <p class="type__1">${types[0] ? types[0] : ""}</p>
+            <p class="type__2">${types[1] ? types[1] : ""}</p>
+          </div>
+        </div>
+        <img src=${imgPokemon} alt=${pokemon.name} />
+        <img src="assets/pokeball.png" alt="" class="pokeball"/>
+      </div>`;
       } catch (err) {
         let message = err.statusText || "Ocurrió un error, intente nuevamente";
         template = `
@@ -45,8 +44,12 @@ async function getPokemon(url) {
       }
     }
     main.innerHTML = template;
-    prevLink = json.previous ? `<a href="${json.previous}">⏪</a>` : "";
-    nexLink = json.next ? `<a href="${json.next}">⏭️</a>` : "";
+    prevLink = json.previous
+      ? `<a href="${json.previous}"<i class='bx bx-left-arrow-alt'></i></a>`
+      : "";
+    nexLink = json.next
+      ? `<a href="${json.next}"<i class='bx bx-right-arrow-alt'></i></a>`
+      : "";
 
     links.innerHTML = prevLink + "" + nexLink;
   } catch (err) {
@@ -62,5 +65,22 @@ document.addEventListener("click", (e) => {
   if (e.target.matches(".links a")) {
     e.preventDefault();
     getPokemon(e.target.href);
+  }
+});
+
+// BUTTON SCROLL
+const btnSroll = document.querySelector(".buttonUP");
+
+window.addEventListener("scroll", (e) => {
+  if (scrollY > 400) {
+    btnSroll.classList.add("hidden");
+  } else {
+    btnSroll.classList.remove("hidden");
+  }
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.matches(".buttonUP *")) {
+    scrollTo(0, 0);
   }
 });
