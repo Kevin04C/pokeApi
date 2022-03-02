@@ -18,6 +18,11 @@ async function getPokemon(url) {
         let url = json.results[i].url;
         let res = await fetch(url);
         let pokemon = await res.json();
+        let types = pokemon.types.map((el) => {
+          return el.type;
+        });
+
+        console.log(types);
 
         if (!res.ok) throw { status: res.status, statusText: res.statusText };
 
