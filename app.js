@@ -90,7 +90,7 @@ document.addEventListener("click", (e) => {
 document.addEventListener("submit", (e) => {
   if (e.target.matches(".form")) {
     e.preventDefault();
-    let value = e.target.searchPokemon.value;
+    let value = e.target.searchPokemon.value.toLowerCase();
     let search = `https://pokeapi.co/api/v2/pokemon/${value}`;
     getPokemon(search, main);
     e.target.reset();

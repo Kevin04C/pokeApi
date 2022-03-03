@@ -1,7 +1,7 @@
 export default async function getPokemon(url, main) {
   const btnReset = document.querySelector(".btn__reset");
   try {
-    main.innerHTML = `<img src="../assets/loader.svg" alt="cargando..." class="loader">`;
+    main.innerHTML = `<img src= "../assets/loader.svg" alt="cargando..." class="loader">`;
     let template = "";
     let res = await fetch(url);
     let pokemon = await res.json();
@@ -24,7 +24,7 @@ export default async function getPokemon(url, main) {
     main.innerHTML = template;
   } catch (err) {
     let message =
-      "No existe ningun pokemon con ese Nombre o ID, intente nuevamente";
+      "No existe ningún pokemon con ese Nombre o ID, intente nuevamente";
     main.innerHTML = `<p class="noFound">${message}</p>`;
   } finally {
     document.addEventListener("click", (e) => {
