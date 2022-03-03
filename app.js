@@ -93,7 +93,6 @@ document.addEventListener("submit", (e) => {
     let value = e.target.searchPokemon.value.toLowerCase();
     let search = `https://pokeapi.co/api/v2/pokemon/${value}`;
     getPokemon(search, main);
-    e.target.reset();
     btnReset.classList.add("active");
   }
 });
