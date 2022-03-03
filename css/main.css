@@ -16,7 +16,7 @@ body {
 
 .title {
   text-align: center;
-  font-size: 2.3rem;
+  font-size: 2rem;
   margin: 1.5rem;
   -webkit-animation: scale 0.5s ease infinite alternate;
           animation: scale 0.5s ease infinite alternate;
@@ -50,15 +50,15 @@ body {
 }
 
 .buttonUP {
-  padding: 0;
-  margin: 0;
-  position: fixed;
-  z-index: 1;
-  right: 25px;
-  bottom: 25px;
-  background-color: #222;
   border: none;
+  position: fixed;
+  background-color: #222;
   border-radius: 5px;
+  -webkit-box-shadow: 0 0px 10px rgba(120, 116, 116, 0.15);
+          box-shadow: 0 0px 10px rgba(120, 116, 116, 0.15);
+  z-index: 1;
+  bottom: 25px;
+  right: 25px;
   cursor: pointer;
   pointer-events: none;
   opacity: 0;
@@ -74,6 +74,135 @@ body {
 .buttonUP.hidden {
   opacity: 1;
   pointer-events: visible;
+}
+
+.container {
+  width: 1024px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.nav {
+  background-color: #e95c4d;
+  margin-bottom: 2rem;
+}
+
+.nav .container {
+  width: 1024px;
+  max-width: 90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav .container .github {
+  color: #fff;
+  font-size: 3rem;
+  -webkit-transition: 0.2s opacity;
+  transition: 0.2s opacity;
+}
+
+.nav .container .github:hover {
+  opacity: 0.7;
+}
+
+.form * {
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.form {
+  padding: 0 2rem;
+}
+
+.form label {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.form .searchPokemon {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 3rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  -webkit-box-shadow: 0 0px 28px rgba(120, 116, 116, 0.1);
+          box-shadow: 0 0px 28px rgba(120, 116, 116, 0.1);
+}
+
+.form .searchPokemon::-webkit-input-placeholder {
+  font-size: 0.9rem;
+}
+
+.form .searchPokemon:-ms-input-placeholder {
+  font-size: 0.9rem;
+}
+
+.form .searchPokemon::-ms-input-placeholder {
+  font-size: 0.9rem;
+}
+
+.form .searchPokemon::placeholder {
+  font-size: 0.9rem;
+}
+
+.form .form__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.form .form__buttons .btn__submit {
+  display: inline-block;
+  border: none;
+  outline: none;
+  background-color: #48e;
+  color: #fff;
+  padding: 10px 20px;
+  padding-bottom: 0;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+}
+
+.form .form__buttons .btn__reset {
+  display: inline-block;
+  border: none;
+  outline: none;
+  background-color: #b667cf;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: none;
+}
+
+.form .form__buttons .btn__reset.active {
+  display: inline-block;
+}
+
+main {
+  -webkit-animation: aparecer 1.5s ease;
+          animation: aparecer 1.5s ease;
 }
 
 .grid-fluida {
@@ -98,8 +227,8 @@ body {
   color: #fff;
   gap: 0.5rem;
   position: relative;
-  -webkit-box-shadow: -1px 5px 25px 0px rgba(120, 116, 116, 0.76);
-          box-shadow: -1px 5px 25px 0px rgba(120, 116, 116, 0.76);
+  -webkit-box-shadow: 0 5px 10px rgba(120, 116, 116, 0.411);
+          box-shadow: 0 5px 10px rgba(120, 116, 116, 0.411);
 }
 
 .grid-fluida .pokemon .pokemon__body {
@@ -157,6 +286,10 @@ body {
      object-fit: cover;
 }
 
+.grid-fluida .noFound {
+  color: #e95c4d;
+}
+
 .classic {
   background-color: #ccc;
 }
@@ -195,10 +328,6 @@ body {
 
 .fairy {
   background-color: #ffc5b4;
-}
-
-.loader.active {
-  display: none;
 }
 
 @-webkit-keyframes scale {

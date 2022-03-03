@@ -18,10 +18,35 @@
     <button class="buttonUP">
       <i class="bx bx-chevron-up up"></i>
     </button>
-    <h1 class="title">PokeAPI</h1>
-    <nav class="links"></nav>
-    <main class="grid-fluida"></main>
+    <nav class="nav">
+      <div class="container">
+        <h1 class="title">PokeAPI</h1>
+        <a href="https://github.com/Kevin04C/pokeApi" target="_blank" class="github"><i class='bx bxl-github'></i></a>
+      </div>
+    </nav>
+    <main>
+      <div class="container">
+        <form class="form" id="form">
+        <label for="searchPokemon">Nombre o id:</label>
+        <input type="text" id="searchPokemon" class="searchPokemon" placeholder="Nombre o id del pokemon" autocomplete="off">
+
+       <div class="form__buttons">
+        <button type="submit" class="btn__submit">
+          <i class='bx bx-search-alt'></i>
+          <span>Buscar</span>
+        </button>
+        <button class="btn__reset">Mostrar Todos</button>
+       </div>
+
+      </form>
+      <aside class="links"></aside>
+      <section class="pokemons">
+        <div class="grid-fluida">
+        </div>
+      </section>
+      </div>
+    </main>
     </footer>
-    <script src="app.js"></script>
+    <script src="app.js" type="module"></script>
   </body>
 </html>

@@ -1,8 +1,10 @@
-const main = document.querySelector("main");
+import getPokemon from "./js/getPokemon.js";
+const main = document.querySelector(".grid-fluida");
 const links = document.querySelector(".links");
 const pokeApi = "https://pokeapi.co/api/v2/pokemon";
+const btnReset = document.querySelector(".btn__reset");
 
-async function getPokemon(url) {
+async function getPokemons(url) {
   try {
     main.innerHTML = `<img src="assets/loader.svg" alt="cargando..." class="loader">`;
     let res = await fetch(url);
@@ -59,12 +61,12 @@ async function getPokemon(url) {
 }
 
 document.addEventListener("DOMContentLoaded", (e) => {
-  getPokemon(pokeApi);
+  getPokemons(pokeApi);
 });
 document.addEventListener("click", (e) => {
   if (e.target.matches(".links a")) {
     e.preventDefault();
-    getPokemon(e.target.href);
+    getPokemons(e.target.href);
   }
 });
 
@@ -82,5 +84,16 @@ window.addEventListener("scroll", (e) => {
 document.addEventListener("click", (e) => {
   if (e.target.matches(".buttonUP *")) {
     scrollTo(0, 0);
+  }
+});
+// FORM
+document.addEventListener("submit", (e) => {
+  if (e.target.matches(".form")) {
+    e.preventDefault();
+    let value = e.target.searchPokemon.value;
+    let search = `https://pokeapi.co/api/v2/pokemon/${value}`;
+    getPokemon(search, main);
+    e.target.reset();
+    btnReset.classList.add("active");
   }
 });
