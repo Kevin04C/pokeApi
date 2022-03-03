@@ -148,7 +148,7 @@ body {
   }
 }
 main {
-  animation: aparecer 1.5s ease;
+  animation: aparecerMain 1s ease;
 }
 .grid-fluida {
   margin: 0 auto;
@@ -259,5 +259,13 @@ main {
   }
   100% {
     transform: translateY(0) scale(1);
+  }
+}
+@keyframes aparecerMain {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
