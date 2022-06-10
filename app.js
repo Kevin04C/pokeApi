@@ -3,6 +3,7 @@ const main = document.querySelector(".grid-fluida");
 const links = document.querySelector(".links");
 const pokeApi = "https://pokeapi.co/api/v2/pokemon";
 const btnReset = document.querySelector(".btn__reset");
+const title = document.querySelector(".title");
 
 async function getPokemons(url) {
   try {
@@ -29,7 +30,7 @@ async function getPokemons(url) {
         template += `
         <div class="pokemon classic ${types[0]} ">
         <div class="pokemon__body">
-          <h2 class="pokemon__name">${pokemon.name}</h2>
+          <h2 class="pokemon__name">${pokemon.name.trim()}</h2>
           <div class="body__types">
             <p class="type__1">${types[0] ? types[0] : ""}</p>
             <p class="type__2">${types[1] ? types[1] : ""}</p>
@@ -96,3 +97,19 @@ document.addEventListener("submit", (e) => {
     btnReset.classList.add("active");
   }
 });
+
+//Reload incio
+title.addEventListener("click", () => {
+  location.reload();
+});
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("./serviceWorker.js")
+    .then((res) => {
+      console.log("Service Woker registrado");
+    })
+    .catch((err) => {
+      console.log("ERROR AL REGISTART SERVICE WORKER ",err);
+    });
+}

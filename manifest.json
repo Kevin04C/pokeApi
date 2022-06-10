@@ -1,0 +1,19 @@
+{
+  "name": "PokeApi",
+  "short_name": "PokeApi",
+  "start_url": "index.html",
+  "description" : "PokeApi proyecto hecho con la API REST de pokemon",
+  "display": "standalone",
+  "background_color": "#222222",
+  "theme_color": "#e95c4d",
+  "orientation": "portrait-primary",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "./assets/icon_144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}
+

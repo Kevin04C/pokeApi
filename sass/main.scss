@@ -13,6 +13,7 @@ body {
 }
 .title {
   text-align: center;
+  cursor: pointer;
   font-size: 2rem;
   margin: 1.5rem;
   animation: scale 0.5s ease infinite alternate;
@@ -92,11 +93,10 @@ body {
   margin-bottom: 0.8rem;
 }
 .form {
-  padding: 0 2rem;
+  padding: 0 1rem;
   label {
     font-size: 1.25rem;
     font-weight: bold;
-    // color: #444;
   }
   .searchPokemon {
     border: none;
@@ -147,16 +147,13 @@ body {
     }
   }
 }
-main {
-  animation: aparecerMain 1s ease;
-}
+
 .grid-fluida {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   text-align: center;
   margin-bottom: 2rem;
-  animation: aparecer 1.5s ease;
   .pokemon {
     margin: 1rem;
     padding: 1rem;
@@ -165,12 +162,13 @@ main {
     color: #fff;
     gap: 0.5rem;
     position: relative;
+    animation: fade 1.5s ease;
     box-shadow: 0 5px 10px rgba(120, 116, 116, 0.411);
     .pokemon__body {
       flex: 1 1 50%;
       position: relative;
       .pokemon__name {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         margin-bottom: 0.5rem;
         text-transform: capitalize;
         position: relative;
@@ -207,6 +205,7 @@ main {
     object-fit: cover;
   }
   .noFound {
+    text-align: center;
     color: #e95c4d;
   }
 }
@@ -247,25 +246,16 @@ main {
     transform: scale(1);
   }
   to {
-    transform: scale(1.2);
+    transform: scale(1.08);
   }
 }
-@keyframes aparecer {
-  0% {
-    transform: translateY(100%) scale(0.25);
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
   }
-  50% {
-    transform: translateY(50%) (0.75);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
-}
-@keyframes aparecerMain {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
+  to {
+    opacity: 100%;
+    transform: translateY(0);
   }
 }

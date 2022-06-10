@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -16,23 +15,18 @@ body {
 
 .title {
   text-align: center;
+  cursor: pointer;
   font-size: 2rem;
   margin: 1.5rem;
-  -webkit-animation: scale 0.5s ease infinite alternate;
-          animation: scale 0.5s ease infinite alternate;
+  animation: scale 0.5s ease infinite alternate;
 }
 
 .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin: 1rem;
   gap: 0.5rem;
 }
-
 .links a {
   text-decoration: none;
   font-size: 2rem;
@@ -45,8 +39,7 @@ body {
 .loader {
   position: absolute;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .buttonUP {
@@ -54,18 +47,15 @@ body {
   position: fixed;
   background-color: #222;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0px 10px rgba(120, 116, 116, 0.15);
-          box-shadow: 0 0px 10px rgba(120, 116, 116, 0.15);
+  box-shadow: 0 0px 10px rgba(120, 116, 116, 0.15);
   z-index: 1;
   bottom: 25px;
   right: 25px;
   cursor: pointer;
   pointer-events: none;
   opacity: 0;
-  -webkit-transition: 0.5s opacity;
   transition: 0.5s opacity;
 }
-
 .buttonUP i {
   color: #fff;
   font-size: 2.8rem;
@@ -86,29 +76,19 @@ body {
   background-color: #e95c4d;
   margin-bottom: 2rem;
 }
-
 .nav .container {
   width: 1024px;
   max-width: 90%;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
-
 .nav .container .github {
   color: #fff;
   font-size: 3rem;
-  -webkit-transition: 0.2s opacity;
   transition: 0.2s opacity;
 }
-
 .nav .container .github:hover {
   opacity: 0.7;
 }
@@ -119,14 +99,12 @@ body {
 }
 
 .form {
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
-
 .form label {
   font-size: 1.25rem;
   font-weight: bold;
 }
-
 .form .searchPokemon {
   border: none;
   outline: none;
@@ -136,33 +114,15 @@ body {
   border-radius: 10px;
   font-size: 1rem;
   margin-bottom: 1.2rem;
-  -webkit-box-shadow: 0 0px 28px rgba(120, 116, 116, 0.1);
-          box-shadow: 0 0px 28px rgba(120, 116, 116, 0.1);
+  box-shadow: 0 0px 28px rgba(120, 116, 116, 0.1);
 }
-
-.form .searchPokemon::-webkit-input-placeholder {
-  font-size: 0.9rem;
-}
-
-.form .searchPokemon:-ms-input-placeholder {
-  font-size: 0.9rem;
-}
-
-.form .searchPokemon::-ms-input-placeholder {
-  font-size: 0.9rem;
-}
-
 .form .searchPokemon::placeholder {
   font-size: 0.9rem;
 }
-
 .form .form__buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 1rem;
 }
-
 .form .form__buttons .btn__submit {
   display: inline-block;
   border: none;
@@ -174,15 +134,10 @@ body {
   border-radius: 10px;
   font-size: 1.1rem;
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 0.5rem;
 }
-
 .form .form__buttons .btn__reset {
   display: inline-block;
   border: none;
@@ -195,68 +150,44 @@ body {
   cursor: pointer;
   display: none;
 }
-
 .form .form__buttons .btn__reset.active {
   display: inline-block;
 }
 
-main {
-  -webkit-animation: aparecerMain 1s ease;
-          animation: aparecerMain 1s ease;
-}
-
 .grid-fluida {
   margin: 0 auto;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   text-align: center;
   margin-bottom: 2rem;
-  -webkit-animation: aparecer 1.5s ease;
-          animation: aparecer 1.5s ease;
 }
-
 .grid-fluida .pokemon {
   margin: 1rem;
   padding: 1rem;
   border-radius: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   color: #fff;
   gap: 0.5rem;
   position: relative;
-  -webkit-box-shadow: 0 5px 10px rgba(120, 116, 116, 0.411);
-          box-shadow: 0 5px 10px rgba(120, 116, 116, 0.411);
+  animation: fade 1.5s ease;
+  box-shadow: 0 5px 10px rgba(120, 116, 116, 0.411);
 }
-
 .grid-fluida .pokemon .pokemon__body {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 50%;
-          flex: 1 1 50%;
+  flex: 1 1 50%;
   position: relative;
 }
-
 .grid-fluida .pokemon .pokemon__body .pokemon__name {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   text-transform: capitalize;
   position: relative;
 }
-
 .grid-fluida .pokemon .body__types {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   position: relative;
   z-index: 5;
 }
-
 .grid-fluida .pokemon .body__types .type__1,
 .grid-fluida .pokemon .body__types .type__2 {
   margin-bottom: 0.5rem;
@@ -268,13 +199,9 @@ main {
   font-size: 1.05rem;
   text-transform: capitalize;
 }
-
 .grid-fluida .pokemon img {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 50%;
-          flex: 1 1 50%;
+  flex: 1 1 50%;
 }
-
 .grid-fluida .pokeball {
   position: absolute;
   bottom: 5%;
@@ -282,11 +209,10 @@ main {
   width: 100px;
   height: 100px;
   opacity: 0.1;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
-
 .grid-fluida .noFound {
+  text-align: center;
   color: #e95c4d;
 }
 
@@ -330,76 +256,23 @@ main {
   background-color: #ffc5b4;
 }
 
-@-webkit-keyframes scale {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  to {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-}
-
 @keyframes scale {
   from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   to {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    transform: scale(1.08);
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0);
   }
 }
 
-@-webkit-keyframes aparecer {
-  0% {
-    -webkit-transform: translateY(100%) scale(0.25);
-            transform: translateY(100%) scale(0.25);
-  }
-  50% {
-    -webkit-transform: translateY(50%) 0.75;
-            transform: translateY(50%) 0.75;
-  }
-  100% {
-    -webkit-transform: translateY(0) scale(1);
-            transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes aparecer {
-  0% {
-    -webkit-transform: translateY(100%) scale(0.25);
-            transform: translateY(100%) scale(0.25);
-  }
-  50% {
-    -webkit-transform: translateY(50%) 0.75;
-            transform: translateY(50%) 0.75;
-  }
-  100% {
-    -webkit-transform: translateY(0) scale(1);
-            transform: translateY(0) scale(1);
-  }
-}
-
-@-webkit-keyframes aparecerMain {
-  0% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-@keyframes aparecerMain {
-  0% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
+/*# sourceMappingURL=main.css.map */

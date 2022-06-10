@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Kevin Cespedes">
+    <meta name="author" content="Kevin Cespedes" />
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-startup-image" href="assets/icon.png">
+    <meta name="theme-color" content="#db4938" />
     <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/main.css" />
     <!-- BOXICONS -->
@@ -21,32 +24,40 @@
     <nav class="nav">
       <div class="container">
         <h1 class="title">PokeAPI</h1>
-        <a href="https://github.com/Kevin04C/pokeApi" target="_blank" class="github"><i class='bx bxl-github'></i></a>
+        <a
+          href="https://github.com/Kevin04C/pokeApi"
+          target="_blank"
+          class="github"
+          ><i class="bx bxl-github"></i
+        ></a>
       </div>
     </nav>
     <main>
       <div class="container">
         <form class="form" id="form">
-        <label for="searchPokemon">Nombre o id:</label>
-        <input type="text" id="searchPokemon" class="searchPokemon" placeholder="Nombre o id del pokemon" autocomplete="off">
+          <label for="searchPokemon">Nombre o id:</label>
+          <input
+            type="text"
+            id="searchPokemon"
+            class="searchPokemon"
+            placeholder="Nombre o id del pokemon"
+            autocomplete="off"
+          />
 
-       <div class="form__buttons">
-        <button type="submit" class="btn__submit">
-          <i class='bx bx-search-alt'></i>
-          <span>Buscar</span>
-        </button>
-        <button class="btn__reset">Mostrar Todos</button>
-       </div>
-
-      </form>
-      <aside class="links"></aside>
-      <section class="pokemons">
-        <div class="grid-fluida">
-        </div>
-      </section>
+          <div class="form__buttons">
+            <button type="submit" class="btn__submit">
+              <i class="bx bx-search-alt"></i>
+              <span>Buscar</span>
+            </button>
+            <button class="btn__reset">Mostrar Todos</button>
+          </div>
+        </form>
+        <aside class="links"></aside>
+        <section class="pokemons">
+          <div class="grid-fluida"></div>
+        </section>
       </div>
     </main>
-    </footer>
     <script src="app.js" type="module"></script>
   </body>
 </html>
